@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -8,57 +8,38 @@ export default function HomeScreen({ navigation }) {
       style={{ flex: 1, backgroundColor: "#000" }} 
       contentContainerStyle={{ alignItems: "center", padding: 20 }}
     >
-      {/* Hero Badge */}
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          backgroundColor: "#111",
-          borderRadius: 50,
-          paddingHorizontal: 16,
-          paddingVertical: 8,
-          marginBottom: 20,
-          borderWidth: 1,
-          borderColor: "#26a269",
-        }}
-      >
-        <MaterialCommunityIcons name="star-four-points" size={18} color="#26a269" />
-        <Text style={{ color: "#fff", marginLeft: 8, fontSize: 12 }}>
-          Developer CheatSheets & Commands
-        </Text>
-      </View>
 
-      {/* Logo */}
       <Image
         source={require("../assets/DevSheets.png")}
         style={{
           width: 250,
           height: 150,
           resizeMode: "contain",
-          marginBottom: 20,
+          marginTop: 10,
+          marginBottom: 10,
         }}
       />
 
-      {/* Title */}
       <Text
         style={{
-          fontSize: 40,
+          fontSize: 30,
           fontWeight: "bold",
           color: "#26a269",
           textAlign: "center",
+          marginBottom: 10,
         }}
       >
-        DevSheets
+        Welcome to DevSheets
       </Text>
       <Text
         style={{
-          fontSize: 22,
+          fontSize: 20,
           color: "#fff",
           textAlign: "center",
           marginBottom: 20,
         }}
       >
-        Quick Access to Git, tmux, Linux Commands
+        Your developer cheat sheet, always in your pocket
       </Text>
 
       {/* Description */}
@@ -85,7 +66,7 @@ export default function HomeScreen({ navigation }) {
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
-            borderColor: "#26a269",
+            borderColor: "#00ff88",
             borderWidth: 1,
           }}
         >
@@ -125,9 +106,27 @@ export default function HomeScreen({ navigation }) {
             borderWidth: 1,
           }}
         >
-          <MaterialCommunityIcons name="layers-triple" size={24} color="#26a269" />
+          <MaterialCommunityIcons name="docker" size={24} color="#26a269" />
           <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            tmux Shortcuts
+            Docker
+          </Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#111",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+          <MaterialCommunityIcons name="bash" size={24} color="#26a269" />
+          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
+            Bash
           </Text>
         </View>
       </View>

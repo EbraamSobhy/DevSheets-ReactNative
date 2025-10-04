@@ -1,0 +1,168 @@
+import { View, ScrollView, Image, Text } from "react-native";
+import Markdown from "react-native-markdown-display";
+
+const gitMarkdown = `
+
+**Git** is a distributed version control system that helps developers track changes in code and collaborate efficiently.
+
+---
+
+## - Configuration
+
+\`\`\`bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+\`\`\`
+
+---
+
+## - Repository Setup
+
+\`\`\`bash
+git init                # Create a new Git repository
+git clone <url>         # Clone an existing repository
+\`\`\`
+
+---
+
+## - Staging & Committing
+
+\`\`\`bash
+git status              # Check file status
+git add <file>          # Add file to staging area
+git add .               # Add all files
+git commit -m "Message" # Commit with message
+\`\`\`
+
+---
+
+## - Branching & Merging
+
+\`\`\`bash
+git branch              # List branches
+git branch <name>       # Create a branch
+git checkout <name>     # Switch to branch
+git merge <name>        # Merge branch
+\`\`\`
+
+---
+
+## - Push & Pull
+
+\`\`\`bash
+git remote add origin <url>  # Add remote repository
+git push -u origin main      # Push changes
+git pull origin main         # Pull updates
+\`\`\`
+
+---
+
+## - History
+
+\`\`\`bash
+git log                # Show commit history
+git diff               # Show changes
+git show <commit>      # Show specific commit
+\`\`\`
+
+---
+
+## - Undo & Reset
+
+\`\`\`bash
+git restore <file>         # Discard changes
+git reset --hard HEAD~1    # Undo last commit
+\`\`\`
+
+---
+
+**Tip:**  
+Use \`git status\` often to keep track of what’s happening!
+`;
+
+export default function Git() {
+  return (
+    <ScrollView
+      style={{
+        flex: 1,
+        backgroundColor: "#000000",
+        padding: 16,
+      }}
+      contentContainerStyle={{ paddingBottom: 40 }}
+    >
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginBottom: 16,
+        }}
+      >
+        <Image
+            source={require("../assets/Git.png")}
+            style={{
+            width: 40,
+            height: 40,
+            marginRight: 10,
+            resizeMode: "contain",
+          }}
+        />
+        <Text
+          style={{
+            color: "#00ff88",
+            fontSize: 26,
+            fontWeight: "bold",
+            fontFamily: "monospace",
+          }}
+        >
+          Git Commands
+        </Text>
+      </View>
+      <Markdown
+        style={{
+          body: {
+            color: "white",
+            fontSize: 16,
+            lineHeight: 24,
+            fontFamily: "monospace",
+          },
+          heading1: {
+            color: "#00ff88",
+            fontSize: 28,
+            fontWeight: "bold",
+            marginBottom: 10,
+          },
+          heading2: {
+            color: "white",
+            fontSize: 22,
+            marginTop: 16,
+            marginBottom: 15,
+          },
+          code_inline: {
+            backgroundColor: "#003300",
+            color: "#00ff88",
+            borderRadius: 4,
+            paddingHorizontal: 4,
+          },
+          code_block: {
+            backgroundColor: "#001a00",
+            color: "#00ff88",
+            borderRadius: 8,
+            padding: 10,
+            fontFamily: "monospace",
+          },
+          fence: {
+            backgroundColor: "#001a00",
+            color: "#00ff88",
+            borderRadius: 8,
+            padding: 10,
+          },
+          strong: {
+            color: "#39ff14",
+          },
+        }}
+      >
+        {gitMarkdown}
+      </Markdown>
+    </ScrollView>
+  );
+}
