@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import CheatSheet from './screens/CheatSheet';
 import Git from './commands/Git';
 import IDE from './commands/IDE';
+import Bash from './commands/Bash';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -64,6 +65,15 @@ export default function App() {
           component={IDE}
           options={{
             title: "IDE",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="Bash"
+          component={Bash}
+          options={{
+            title: "Bash",
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#26a269',
           }}

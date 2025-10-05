@@ -86,6 +86,11 @@ export default function CheatSheet({ navigation }) {
         </View>
 
         {/* Bash */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Bash")}
+          activeOpacity={0.8}
+        >
         <View
           style={{
             flexDirection: "row",
@@ -111,6 +116,8 @@ export default function CheatSheet({ navigation }) {
             Bash
           </Text>
         </View>
+        </TouchableOpacity>
+      </View>
         
         {/* IDE */}
         <View>
