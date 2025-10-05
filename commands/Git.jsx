@@ -1,5 +1,7 @@
-import { View, ScrollView, Image, Text } from "react-native";
+import { View, ScrollView, Image, Text, TouchableOpacity, Alert } from "react-native";
 import Markdown from "react-native-markdown-display";
+import * as Clipboard from "expo-clipboard";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const gitMarkdown = `
 
@@ -81,6 +83,11 @@ Use \`git status\` often to keep track of what’s happening!
 `;
 
 export default function Git() {
+  const handleCopy = (text) => {
+    Clipboard.setStringAsync(text);
+    Alert.alert("Copied!");
+  };
+
   return (
     <ScrollView
       style={{
@@ -117,6 +124,8 @@ export default function Git() {
           Git Commands
         </Text>
       </View>
+
+      {/* Markdown Commands */}
       <Markdown
         style={{
           body: {
@@ -136,6 +145,7 @@ export default function Git() {
             fontSize: 22,
             marginTop: 16,
             marginBottom: 15,
+            fontWeight: "bold"
           },
           code_inline: {
             backgroundColor: "#003300",
@@ -159,6 +169,89 @@ export default function Git() {
           strong: {
             color: "#39ff14",
           },
+        }}
+        rules={{
+          fence: (node) => {
+            const codeText = node.content;
+            const language = node.info || "bash";
+
+          return (
+            <View
+              key={Math.random()}
+              style={{
+                borderRadius: 8,
+                marginVertical: 10,
+                overflow: "hidden",
+              }}
+            >
+              {/* Header Bar */}
+              <View
+                style={{
+                  backgroundColor: "black",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  paddingHorizontal: 12,
+                  paddingVertical: 6,
+                  borderWidth: 1,
+                  borderColor: "green",
+                  borderStyle: "solid", 
+                  borderRadius: 6, 
+                }}
+              >
+                <Text
+                  style={{
+                    color: "white",
+                    fontSize: 13,
+                    fontFamily: "monospace",
+                  }}
+                >
+                  {language}
+                </Text>
+
+                <TouchableOpacity
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    backgroundColor: "transparent",
+                  }}
+                  onPress={() => handleCopy(codeText)}
+                >
+                  <MaterialCommunityIcons
+                    name="content-copy"
+                    size={14}
+                    color="white"
+                    style={{ marginRight: 4 }}
+                  />
+                  <Text
+                    style={{
+                      color: "white",
+                      fontSize: 13,
+                      fontWeight: "500",
+                    }}
+                  >
+                    Copy
+                  </Text>
+                </TouchableOpacity>
+              </View>
+
+              {/* Code Area */}
+              <Text
+                selectable
+                style={{
+                  color: "#00ff88",
+                  fontFamily: "monospace",
+                  fontSize: 14,
+                  backgroundColor: "#001a00",
+                  padding: 10,
+                  lineHeight: 20,
+                }}
+              >
+                {codeText.trim()}
+              </Text>
+            </View>
+          );
+        },
         }}
       >
         {gitMarkdown}

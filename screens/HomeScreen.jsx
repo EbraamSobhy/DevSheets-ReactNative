@@ -1,25 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function HomeScreen({ navigation }) {
+  const tips = [
+  "Write code for humans first, computers second.",
+  "Read other people's code — it's one of the fastest ways to improve.",
+  "Before optimizing, make it work. Then make it fast.",
+  "Good naming is better than long documentation.",
+  "Learn to debug — it’s your real superpower.",
+  "Automate repetitive tasks; your future self will thank you.",
+  "Version control is not optional — commit often and meaningfully.",
+  "Don’t chase every new framework; master the fundamentals instead.",
+  "Always ask 'why' before writing a single line of code.",
+  "Write tests, not excuses.",
+  "Technical debt is easy to create and hard to pay off — be intentional.",
+  "Comment why, not what.",
+  "Focus on solving problems, not writing code.",
+  "Mentor others — teaching makes you a better engineer.",
+  "Learn to say 'no' when quality is at stake.",
+  "Code reviews are not personal — they’re for growth.",
+  "Never stop learning; technology evolves daily.",
+  "Balance your time between coding and design thinking.",
+  "Understand the system before fixing the symptom.",
+  "Be kind — great teams build great software.",
+];
+
+  const [tip, setTip] = useState("");
+
+  useEffect(() => {
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    setTip(randomTip);
+  }, []);
+
   return (
-    <ScrollView 
-      style={{ flex: 1, backgroundColor: "#000" }} 
+    <ScrollView
+      style={{ flex: 1, backgroundColor: "#000" }}
       contentContainerStyle={{ alignItems: "center", padding: 20 }}
     >
-
+      {/* Logo */}
       <Image
         source={require("../assets/DevSheets.png")}
         style={{
           width: 250,
           height: 150,
           resizeMode: "contain",
-          marginTop: 10,
+          marginTop: 50,
           marginBottom: 10,
         }}
       />
 
+      {/* Welcome Text */}
       <Text
         style={{
           fontSize: 30,
@@ -56,79 +86,37 @@ export default function HomeScreen({ navigation }) {
         Computer Science students & software engineers.
       </Text>
 
-      {/* Feature Cards */}
-      <View style={{ width: "100%", marginBottom: 30 }}>
-        <View
+      {/* Daily Tip Section */}
+      <View
+        style={{
+          backgroundColor: "#111",
+          borderRadius: 12,
+          padding: 20,
+          borderColor: "#26a269",
+          borderWidth: 1,
+          width: "100%",
+          marginBottom: 30,
+        }}
+      >
+        <Text
           style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "#111",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#00ff88",
-            borderWidth: 1,
+            color: "#26a269",
+            fontSize: 20,
+            fontWeight: "bold",
+            marginBottom: 10,
           }}
         >
-          <MaterialCommunityIcons name="git" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Git CheatSheet
-          </Text>
-        </View>
-
-        <View
+          👨🏻‍💻 Daily Developer Advices
+        </Text>
+        <Text
           style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "#111",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
+            color: "#fff",
+            fontSize: 16,
+            lineHeight: 22,
           }}
         >
-          <MaterialCommunityIcons name="console" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Linux Commands
-          </Text>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "#111",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
-          }}
-        >
-          <MaterialCommunityIcons name="docker" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Docker
-          </Text>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "#111",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
-          }}
-        >
-          <MaterialCommunityIcons name="bash" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Bash
-          </Text>
-        </View>
+          {tip}
+        </Text>
       </View>
     </ScrollView>
   );
