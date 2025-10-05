@@ -154,6 +154,11 @@ export default function CheatSheet({ navigation }) {
       </View>
 
         {/* OS */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("OS")}
+          activeOpacity={0.8}
+        >
         <View
           style={{
             flexDirection: "row",
@@ -171,6 +176,9 @@ export default function CheatSheet({ navigation }) {
             Operating systems (OS)
           </Text>
         </View>
+        </TouchableOpacity>
+      </View>
+
       </View>
     </ScrollView>
   );

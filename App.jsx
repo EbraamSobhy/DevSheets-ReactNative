@@ -8,6 +8,7 @@ import CheatSheet from './screens/CheatSheet';
 import Git from './commands/Git';
 import IDE from './commands/IDE';
 import Bash from './commands/Bash';
+import OS from './commands/OS';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -74,6 +75,15 @@ export default function App() {
           component={Bash}
           options={{
             title: "Bash",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="OS"
+          component={OS}
+          options={{
+            title: "Operating Systems",
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#26a269',
           }}
