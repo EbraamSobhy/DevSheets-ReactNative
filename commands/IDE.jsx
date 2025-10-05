@@ -18,66 +18,59 @@ const ideMarkdown = `
 ---
 
 ## - Web Development
-\`\`\`bash
-Visual Studio Code
-Sublime Text
-Atom (discontinued but loved)
-Brackets
-\`\`\`
+
+- **Visual Studio Code**  
+- **Sublime Text**  
+- **Atom** (discontinued but loved)  
+- **Brackets**
 
 ---
 
 ## - JavaScript / TypeScript
-\`\`\`bash
-Visual Studio Code
-WebStorm
-\`\`\`
+
+- **Visual Studio Code**  
+- **WebStorm**
 
 ---
 
 ## - Java
-\`\`\`bash
-IntelliJ IDEA
-Eclipse
-NetBeans
-\`\`\`
+
+- **IntelliJ IDEA**  
+- **Eclipse**  
+- **NetBeans**
 
 ---
 
 ## - Python
-\`\`\`bash
-PyCharm
-VS Code (with Python plugin)
-Spyder
-Jupyter Notebook
-\`\`\`
+
+- **PyCharm**  
+- **Visual Studio Code (with Python plugin)**  
+- **Spyder**  
+- **Jupyter Notebook**
 
 ---
 
 ## - C / C++
-\`\`\`bash
-CLion
-Code::Blocks
-Dev-C++
-Visual Studio
-\`\`\`
+
+- **CLion**  
+- **Code::Blocks**  
+- **Dev-C++**  
+- **Visual Studio**
 
 ---
 
 ## - Mobile Development
-\`\`\`bash
-Android Studio (for Android)
-Xcode (for iOS)
-\`\`\`
+
+- **Android Studio** (for Android)  
+- **Xcode** (for iOS)
 
 ---
 
 ## - Cross-Platform & Others
-\`\`\`bash
-Rider (.NET)
-PhpStorm (PHP)
-RubyMine (Ruby)
-\`\`\`
+
+- **Rider** (.NET)  
+- **PhpStorm** (PHP)  
+- **RubyMine** (Ruby)
 
 ---
 
@@ -178,7 +171,7 @@ export default function IDE() {
         rules={{
           fence: (node) => {
             const codeText = node.content;
-            const language = node.info || "bash";
+            // const language = node.info || "bash";
 
             return (
               <View
