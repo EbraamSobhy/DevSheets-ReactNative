@@ -118,6 +118,67 @@ export default function CheatSheet({ navigation }) {
         </View>
         </TouchableOpacity>
       </View>
+
+      {/* Gemini */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Gemini")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#111",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/Gemini.png")}
+            style={{
+            width: 35,
+            height: 25,
+            resizeMode: "contain",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+            Gemini CLI
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+      {/* GitHub */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("GitHub")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#111",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <MaterialCommunityIcons name="github" size={24} color="#26a269" />
+
+          <Text style={{ color: "#fff", marginLeft: 20, fontSize: 16 }}>
+            GitHub CLI
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
         
         {/* IDE */}
         <View>

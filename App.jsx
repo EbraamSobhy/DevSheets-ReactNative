@@ -9,6 +9,8 @@ import Git from './commands/Git';
 import IDE from './commands/IDE';
 import Bash from './commands/Bash';
 import OS from './commands/OS';
+import Gemini from './commands/Gemini';
+import GitHub from './commands/GitHub';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -84,6 +86,24 @@ export default function App() {
           component={OS}
           options={{
             title: "Operating Systems",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="Gemini"
+          component={Gemini}
+          options={{
+            title: "Gemini CLI",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="GitHub"
+          component={GitHub}
+          options={{
+            title: "GitHub CLI",
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#26a269',
           }}
