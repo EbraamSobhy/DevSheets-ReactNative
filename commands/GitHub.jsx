@@ -4,84 +4,104 @@ import * as Clipboard from "expo-clipboard";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const bashMarkdown = `
-**Bash (Bourne Again SHell)** is a command-line interpreter that allows users to interact with the operating system using text commands.  
-It’s widely used on Linux, macOS, and even on Windows (via WSL).
+**GitHub CLI (gh)** is an open-source tool that lets you interact with GitHub directly from your terminal. It's designed to streamline your workflow by allowing you to perform
+   various GitHub tasks without leaving the command line.
 
 ---
 
 ## - File & Directory Commands
 
 \`\`\`bash
-ls                # List files and directories
-ls -la            # List all files with details
-cd <dir>          # Change directory
-pwd               # Print working directory
-mkdir <dir>       # Create new directory
-rmdir <dir>       # Remove empty directory
-rm -rf <dir>      # Remove directory and its contents
+# Manage GitHub authentication
+gh auth
+
+# Open a repository in the browser
+gh browse   
+
+# Manage codespaces
+gh codespace
+
+# Manage gists
+gh gist
+
+# Create, view, and manage issues
+gh issue       
+
+# Manage GitHub organizations
+gh org
+
+# Create, view, and manage pull requests
+gh pr
+
+# Manage projects
+gh project      
+
+# Manage releases
+gh release      
+
+# Create, clone, view, and manage repositry
+gh repo      
 \`\`\`
 
 ---
 
-## - File Operations
+## - Additional Commands
 
 \`\`\`bash
-cp file1 file2          # Copy file
-mv file1 file2          # Move or rename file
-cat file.txt            # Display file content
-touch file.txt          # Create empty file
-head file.txt           # Show first 10 lines
-tail file.txt           # Show last 10 lines
+# Manage agent tasks
+gh agent-task
+
+# Create and manage command aliases
+gh alias
+
+# Make authenticated GitHub API calls
+gh api
+
+# Manage attestations
+gh attestation
+
+# Generate shell completion scripts
+gh completion
+
+# GitHub CLI configuration
+gh config
+
+# Manage GitHub CLI extensions
+gh extension
+
+# Manage GPG keys
+gh gpg-key
+
+# Manage labels
+gh label
+
+# Preview GitHub features
+gh preview
+
+# Manage rulesets
+gh ruleset
+
+# Search GitHub
+gh search
+
+# Manage secrets
+gh secret
+
+# Manage SSH keys
+gh ssh-key
+
+# View GitHub status
+gh status
+
+# Manage variables
+gh variable
+
+# Manage GitHub Actions workflows
+gh workflow
 \`\`\`
 
 ---
 
-## - Permissions
-
-\`\`\`bash
-chmod +x script.sh      # Make script executable
-chown user file.txt     # Change file owner
-sudo <command>          # Run command as superuser
-\`\`\`
-
----
-
-## - Process Management
-
-\`\`\`bash
-ps                     # Show running processes
-top                    # Show system processes
-kill <pid>             # Kill a process by ID
-htop                   # Interactive process viewer (if installed)
-\`\`\`
-
----
-
-## - Networking
-
-\`\`\`bash
-ping google.com        # Test connection
-ifconfig               # Show network interfaces
-curl <url>             # Fetch data from a URL
-wget <url>             # Download file from a URL
-\`\`\`
-
----
-
-## - Useful Shortcuts
-
-\`\`\`bash
-Ctrl + C    # Stop running command
-Ctrl + L    # Clear terminal
-Ctrl + R    # Search command history
-!!          # Repeat last command
-!<number>   # Run command from history
-\`\`\`
-
----
-
-**Tip:**  
-Use \`man <command>\` to read the manual for any command (e.g., \`man ls\`).
 `;
 
 export default function GitHub() {
@@ -108,7 +128,7 @@ export default function GitHub() {
         }}
       >
         <Image
-          source={require("../assets/Bash.png")}
+          source={require("../assets/GitHub.png")}
           style={{
             width: 40,
             height: 40,
@@ -125,7 +145,7 @@ export default function GitHub() {
             fontFamily: "monospace",
           }}
         >
-          Bash Commands
+          GitHub CLI
         </Text>
       </View>
 

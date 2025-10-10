@@ -171,9 +171,14 @@ export default function CheatSheet({ navigation }) {
             borderWidth: 1,
           }}
         >
-        <MaterialCommunityIcons name="github" size={24} color="#26a269" />
+        <MaterialCommunityIcons 
+              name="github" 
+              size={24} 
+              color="#26a269"
+              style={{ marginLeft: 5 }}
+              />
 
-          <Text style={{ color: "#fff", marginLeft: 20, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 15, fontSize: 16 }}>
             GitHub CLI
           </Text>
         </View>
