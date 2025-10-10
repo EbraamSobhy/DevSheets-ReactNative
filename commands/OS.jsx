@@ -21,62 +21,23 @@ const osMarkdown = `
 
 ## - Types of Operating Systems
 
-\`\`\`bash
-Windows          # Popular desktop OS from Microsoft
-macOS            # Apple’s desktop operating system
-Linux            # Open-source and highly customizable
-Android          # Mobile OS based on Linux
-iOS              # Apple’s mobile OS
-\`\`\`
+- **Windows:** Popular desktop OS from Microsoft
+- **macOS:** Apple’s desktop operating system
+- **Linux:** Open-source and highly customizable
+- **Android:** Mobile OS based on Linux
+- **iOS:** Apple’s mobile OS
 
 ---
 
 ## - Common Linux Distributions
 
-\`\`\`bash
-Ubuntu           # Beginner-friendly and widely used
-Debian           # Stable and reliable
-Fedora           # Cutting-edge and developer-focused
-Arch Linux       # Lightweight and customizable
-Kali Linux       # Security testing and ethical hacking
-CentOS / RHEL    # Enterprise-grade servers
-\`\`\`
-
----
-
-## - Basic OS Commands (Cross-Platform)
-
-\`\`\`bash
-shutdown -h now     # Shut down system (Linux/macOS)
-reboot              # Restart system
-tasklist            # Show running processes (Windows)
-top                 # Show processes (Linux/macOS)
-df -h               # Display disk usage
-free -m             # Show memory usage
-\`\`\`
-
----
-
-## - Environment Variables
-
-\`\`\`bash
-echo $PATH          # Show executable search path
-export VAR=value    # Set a variable (Linux/macOS)
-set VAR=value       # Set a variable (Windows)
-printenv VAR        # Display variable value
-\`\`\`
-
----
-
-## - System Information
-
-\`\`\`bash
-uname -a            # Show system information
-lsb_release -a      # Show Linux distribution info
-systeminfo          # Show Windows system info
-uptime              # Display system uptime
-hostname            # Show device name
-\`\`\`
+- **Ubuntu (LTS):** Beginner-friendly and widely used
+- **Debian:** Stable and reliable
+- **Fedora Workstation:** Cutting-edge and experience with frequent updates
+- **Arch Linux:** Lightweight and customizable
+- **Kali Linux:** Security testing and ethical hacking
+- **Pop!_OS:** Based on Ubuntu, it offers a polished user experience
+- **Manjaro:** A user-friendly distribution based on Arch Linux
 
 ---
 
@@ -146,7 +107,7 @@ export default function OS() {
           heading2: {
             color: "white",
             fontSize: 22,
-            marginTop: 16,
+            marginTop: 20,
             marginBottom: 15,
             fontWeight: "bold",
           },

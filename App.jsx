@@ -15,7 +15,6 @@ import GitHub from './commands/GitHub';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-// Bottom Tabs
 function Tabs() {
   return (
     <Tab.Navigator
@@ -25,7 +24,7 @@ function Tabs() {
           borderTopColor: '#111',
           height: 60,
           paddingBottom: 5,
-          marginBottom: 40,
+          marginBottom: 45,
         },
         tabBarIcon: ({ color, size }) => {
           if (route.name === 'Home') {
@@ -44,7 +43,6 @@ function Tabs() {
   );
 }
 
-// Stack + Tabs together
 export default function App() {
   return (
     <NavigationContainer>
