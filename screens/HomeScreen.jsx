@@ -82,7 +82,7 @@ export default function HomeScreen({ navigation }) {
           maxWidth: 320,
         }}
       >
-        Learn, explore, and use developer commands instantly. Perfect for
+        Learn, explore, and use developer commands instantly for Automation. Perfect for
         Computer Science students & software engineers.
       </Text>
 

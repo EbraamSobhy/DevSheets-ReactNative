@@ -9,6 +9,27 @@ It’s widely used on Linux, macOS, and even on Windows (via WSL).
 
 ---
 
+## - Printing
+
+\`\`\`bash
+echo "Hello"
+echo 'Hello'
+echo -e 'some \text'
+
+# Run script:
+./myscript.sh
+\`\`\`
+
+## - Create Script
+
+\`\`\`bash
+nano myscript.sh
+chmod +x myscript.sh
+
+# this is a comment
+\`\`\`
+
+
 ## - File & Directory Commands
 
 \`\`\`bash
@@ -21,7 +42,55 @@ rmdir <dir>       # Remove empty directory
 rm -rf <dir>      # Remove directory and its contents
 \`\`\`
 
----
+## - Variables
+
+\`\`\`bash
+STRING="Linux"
+echo $STRING
+
+name=Mark
+echo "The name is $name"
+
+val=10
+echo "value $val"
+
+_val=10
+echo "value $_val"
+\`\`\`
+
+
+## - Conditional Statements
+
+\`\`\`bash
+count=1
+if [ $count -eq 10 ]
+then
+  echo "True"
+else
+  echo "False"
+fi
+
+num=1
+if [ $num -gt 10 ]; then
+  echo "True"
+elif [ $num -gt 0 ]; then
+  echo "Positive number"
+else
+  echo "False"
+fi
+\`\`\`
+
+## - Numeric Operators
+
+\`\`\`bash
+-eq           # Equal to
+-ne           # Not equal to
+-gt           # Greater than
+-lt           # Less than
+-ge           # Greater or equal
+-le           # Less or equal
+\`\`\`
+
 
 ## - File Operations
 
@@ -34,7 +103,6 @@ head file.txt           # Show first 10 lines
 tail file.txt           # Show last 10 lines
 \`\`\`
 
----
 
 ## - Permissions
 
@@ -44,7 +112,6 @@ chown user file.txt     # Change file owner
 sudo <command>          # Run command as superuser
 \`\`\`
 
----
 
 ## - Process Management
 
@@ -55,7 +122,6 @@ kill <pid>             # Kill a process by ID
 htop                   # Interactive process viewer (if installed)
 \`\`\`
 
----
 
 ## - Networking
 
@@ -66,7 +132,6 @@ curl <url>             # Fetch data from a URL
 wget <url>             # Download file from a URL
 \`\`\`
 
----
 
 ## - Useful Shortcuts
 
@@ -173,6 +238,14 @@ export default function Bash() {
           strong: {
             color: "#39ff14",
           },
+
+        hr: {
+          borderColor: "#00ff88", 
+          borderWidth: 0.5,
+          marginVertical: 10,
+          marginTop: 15
+        },
+
         }}
         rules={{
           fence: (node) => {
