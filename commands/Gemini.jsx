@@ -37,8 +37,16 @@ npm update -g @google/generative-ai
 ### - macOS
 
 \`\`\`bash
-sudo npm install -g @google/generative-ai
-sudo npm update -g @google/generative-ai
+# Install homebrew mac os
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew --version
+brew update
+brew doctor
+brew install node
+
+# Install Gemini CLI
+npm install -g @google/gemini-cli
+npm update -g @google/gemini-cli
 \`\`\`
 
 ---

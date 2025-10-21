@@ -7,7 +7,17 @@ const gitMarkdown = `
 
 **Git** is a distributed version control system that helps developers track changes in code and collaborate efficiently.
 
----
+**Version Control System**
+- Keep careful track of changes in your ﬁles
+
+- Collaborate with others on your projects more easily
+
+- Test changes without losing the original versions
+
+- Revert back to older versions when/if needed
+
+
+-----
 
 ## - Configuration
 
@@ -16,16 +26,24 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 \`\`\`
 
----
+## - Download Repository 
+
+\`\`\`bash
+git clone <URL>  # URL of Repository 
+\`\`\`
+
 
 ## - Repository Setup
 
 \`\`\`bash
-git init                # Create a new Git repository
-git clone <url>         # Clone an existing repository
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin <URL> 
+git push -u origin main
 \`\`\`
 
----
 
 ## - Staging & Committing
 
@@ -36,7 +54,6 @@ git add .               # Add all files
 git commit -m "Message" # Commit with message
 \`\`\`
 
----
 
 ## - Branching & Merging
 
@@ -47,7 +64,6 @@ git checkout <name>     # Switch to branch
 git merge <name>        # Merge branch
 \`\`\`
 
----
 
 ## - Push & Pull
 
@@ -57,7 +73,6 @@ git push -u origin main      # Push changes
 git pull origin main         # Pull updates
 \`\`\`
 
----
 
 ## - History
 
@@ -67,7 +82,6 @@ git diff               # Show changes
 git show <commit>      # Show specific commit
 \`\`\`
 
----
 
 ## - Undo & Reset
 
@@ -169,6 +183,16 @@ export default function Git() {
           strong: {
             color: "#39ff14",
           },
+        bullet_list: {
+            gap: 20,
+        },
+        hr: {
+          borderColor: "#00ff88", 
+          borderWidth: 0.5,
+          marginVertical: 10,
+          marginTop: 15
+        },
+
         }}
         rules={{
           fence: (node) => {
