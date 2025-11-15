@@ -31,7 +31,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -52,7 +52,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -71,7 +71,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -81,7 +81,7 @@ export default function CheatSheet({ navigation }) {
         >
           <MaterialCommunityIcons name="docker" size={24} color="#26a269" />
           <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Docker
+            Docker CLI
           </Text>
         </View>
 
@@ -95,7 +95,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -119,6 +119,110 @@ export default function CheatSheet({ navigation }) {
         </TouchableOpacity>
       </View>
 
+           {/* Tmux */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Gemini")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "black",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/Tmux.png")}
+            style={{
+            width: 35,
+            height: 25,
+            resizeMode: "contain",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+            Tmux
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+            {/* FZF */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Gemini")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "black",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/fzf.png")}
+            style={{
+            width: 35,
+            height: 25,
+            resizeMode: "contain",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+            Fuzzy Finder
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+            {/* oh my zsh */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Gemini")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "black",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/zsh.png")}
+            style={{
+            width: 35,
+            height: 25,
+            size: 30,
+            resizeMode: "contain",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+            oh my zsh
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+
       {/* Gemini */}
         <View>
         <TouchableOpacity
@@ -129,7 +233,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -163,7 +267,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -195,7 +299,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
@@ -229,7 +333,7 @@ export default function CheatSheet({ navigation }) {
           style={{
             flexDirection: "row",
             alignItems: "center",
-            backgroundColor: "#111",
+            backgroundColor: "black",
             padding: 16,
             borderRadius: 12,
             marginBottom: 12,
