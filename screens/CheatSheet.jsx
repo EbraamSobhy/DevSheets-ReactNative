@@ -66,25 +66,6 @@ export default function CheatSheet({ navigation }) {
           </Text>
         </View>
 
-      {/* Docker */}
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "black",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
-          }}
-        >
-          <MaterialCommunityIcons name="docker" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
-            Docker CLI
-          </Text>
-        </View>
-
         {/* Bash */}
         <View>
         <TouchableOpacity
@@ -114,6 +95,40 @@ export default function CheatSheet({ navigation }) {
         />
           <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
             Bash
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+        {/* Docker */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Docker")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "black",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/Docker.png")}
+            style={{
+            width: 35,
+            height: 25,
+            resizeMode: "contain",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+            Docker
           </Text>
         </View>
         </TouchableOpacity>

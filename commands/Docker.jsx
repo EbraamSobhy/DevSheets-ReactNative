@@ -4,44 +4,52 @@ import * as Clipboard from "expo-clipboard";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const bashMarkdown = `
-**Bash (Bourne Again SHell)** is a command-line interpreter that allows users to interact with the operating system using text commands.  
-It’s widely used on Linux, macOS, and even on Windows (via WSL).
+**Docker** is a platform for building, packaging, and running applications as lightweight, portable containers.
+Containers bundle an app together with its runtime, libraries and settings into a single image, so the app runs the same on any machine.
+
+Docker is heavily used for development, CI/CD, microservices, and deploying to cloud environments.
+Key components include the Docker Engine (runtime), Docker images, Docker Hub (image registry), and Docker Desktop (macOS/Windows).
+
+Works natively on Linux and via Docker Desktop or WSL2 on macOS and Windows.
 
 ---
 
-## - File & Directory Commands
+## - Docker Basics
 
 \`\`\`bash
-ls                # List files and directories
-ls -la            # List all files with details
-cd <dir>          # Change directory
-pwd               # Print working directory
-mkdir <dir>       # Create new directory
-rmdir <dir>       # Remove empty directory
-rm -rf <dir>      # Remove directory and its contents
+docker version      # Show Docker version
+docker info         # System Docker info
+docker help         # Docker commands
 \`\`\`
 
 ---
 
-## - File Operations
+## - Images
 
 \`\`\`bash
-cp file1 file2          # Copy file
-mv file1 file2          # Move or rename file
-cat file.txt            # Display file content
-touch file.txt          # Create empty file
-head file.txt           # Show first 10 lines
-tail file.txt           # Show last 10 lines
+cp file1 file2      # Copy file
+mv file1 file2      # Move or rename file
+cat file.txt        # Display file content
+touch file.txt      # Create empty file
+head file.txt       # Show first 10 lines
+tail file.txt       # Show last 10 lines
 \`\`\`
 
 ---
 
-## - Permissions
+## - Container Listing & Operations
 
 \`\`\`bash
-chmod +x script.sh      # Make script executable
-chown user file.txt     # Change file owner
-sudo <command>          # Run command as superuser
+docker ps              # List running containers
+docker ps -a           # List all containers
+docker run <image>     # Run container
+docker run -it <image> # Interactive mode
+docker run -d <image>  # Detached mode
+docker run --name <name> <image>  # Run with name
+docker start <container>    # Start container
+docker stop <container>     # Stop container
+docker restart <container>  # Restart container
+docker rm <container>       # Remove container
 \`\`\`
 
 ---
@@ -108,13 +116,12 @@ export default function Docker() {
         }}
       >
         <Image
-          source={require("../assets/Bash.png")}
+          source={require("../assets/Docker.png")}
           style={{
             width: 40,
             height: 40,
             marginRight: 10,
             resizeMode: "contain",
-            tintColor: "white",
           }}
         />
         <Text
@@ -125,7 +132,7 @@ export default function Docker() {
             fontFamily: "monospace",
           }}
         >
-          Bash Commands
+          Docker CLI
         </Text>
       </View>
 

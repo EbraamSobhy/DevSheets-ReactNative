@@ -11,6 +11,7 @@ import Bash from './commands/Bash';
 import OS from './commands/OS';
 import Gemini from './commands/Gemini';
 import GitHub from './commands/GitHub';
+import Docker from './commands/Docker';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -102,6 +103,15 @@ export default function App() {
           component={GitHub}
           options={{
             title: "GitHub CLI",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="Docker"
+          component={Docker}
+          options={{
+            title: "Docker CLI",
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#26a269',
           }}
