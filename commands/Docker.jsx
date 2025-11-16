@@ -40,32 +40,37 @@ tail file.txt       # Show last 10 lines
 ## - Container Listing & Operations
 
 \`\`\`bash
-docker ps              # List running containers
-docker ps -a           # List all containers
+docker ps       # List running containers
+docker ps -a    # List all containers
 docker run <image>     # Run container
 docker run -it <image> # Interactive mode
 docker run -d <image>  # Detached mode
-docker run --name <name> <image>  # Run with name
-docker start <container>    # Start container
-docker stop <container>     # Stop container
-docker restart <container>  # Restart container
-docker rm <container>       # Remove container
+docker run --name <name><image> # Run name
+docker start <container> # Start container
+docker stop <container>   # Stop container
+docker rm <container> # Remove container
+
+docker restart <container> # Restart container
 \`\`\`
 
 ---
 
-## - Process Management
+## -  Container Inspection & Management
 
 \`\`\`bash
-ps                     # Show running processes
-top                    # Show system processes
-kill <pid>             # Kill a process by ID
-htop                   # Interactive process viewer (if installed)
+docker exec -it <container> # Access container shell
+
+docker logs <container>     # View logs
+docker inspect <container>  # Detailed info
+docker rename <old_name> <new_name>  # Rename container
+docker pause <container>    # Pause container
+docker unpause <container>  # Unpause container
+docker cp <container>:<path> <destination>  # Copy files
 \`\`\`
 
 ---
 
-## - Networking
+## - Volumes (Data Persistence)
 
 \`\`\`bash
 ping google.com        # Test connection
@@ -76,20 +81,65 @@ wget <url>             # Download file from a URL
 
 ---
 
-## - Useful Shortcuts
+## - Networks
 
 \`\`\`bash
-Ctrl + C    # Stop running command
-Ctrl + L    # Clear terminal
-Ctrl + R    # Search command history
-!!          # Repeat last command
-!<number>   # Run command from history
+docker network ls              # List networks
+docker network create <name>   # Create a network
+docker network inspect <name>  # Inspect a network
+docker network rm <name>       # Remove a network
+docker network connect <network> <container>     # Connect container to network
+docker network disconnect <network> <container>  # Disconnect container from network
 \`\`\`
 
 ---
 
-**Tip:**  
-Use \`man <command>\` to read the manual for any command (e.g., \`man ls\`).
+## - Building & Managing Images
+
+\`\`\`bash
+docker build -t <name> .          # Build an image from Dockerfile
+docker history <image>            # Show image history
+docker commit <container> <new_image>  # Create new image from container
+\`\`\`
+
+---
+
+## - System Cleanup & Maintenance
+
+\`\`\`bash
+docker system prune        # Remove unused containers, networks, images
+docker container prune     # Remove all stopped containers
+docker image prune         # Remove unused images
+docker volume prune        # Remove unused volumes
+docker network prune       # Remove unused networks
+\`\`\`
+
+---
+
+## - Application Deployment
+
+\`\`\`bash
+# Build and run a container
+docker build -t my-frontend-app .
+docker run -p 3000:3000 my-frontend-app
+
+# Update and redeploy
+docker build -t my-express-app .
+docker stop <container_id>
+docker rm <container_id>
+docker run -d -p 3000:3000 my-express-app
+\`\`\`
+
+---
+
+## - Docker Hub
+
+\`\`\`bash
+docker login                    # Login to Docker Hub
+docker tag <image> <username>/<image>  # Tag image for Docker Hub
+docker push <username>/<image>  # Push image to Docker Hub
+\`\`\`
+
 `;
 
 export default function Docker() {

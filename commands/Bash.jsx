@@ -13,7 +13,9 @@ It’s widely used on Linux, macOS, and even on Windows (via WSL).
 
 \`\`\`bash
 echo "Hello"
+
 echo 'Hello'
+
 echo -e 'some \text'
 
 # Run script:
@@ -24,6 +26,7 @@ echo -e 'some \text'
 
 \`\`\`bash
 nano myscript.sh
+
 chmod +x myscript.sh
 
 # this is a comment
@@ -33,13 +36,19 @@ chmod +x myscript.sh
 ## - File & Directory Commands
 
 \`\`\`bash
-ls                # List files and directories
-ls -la            # List all files with details
-cd <dir>          # Change directory
-pwd               # Print working directory
-mkdir <dir>       # Create new directory
-rmdir <dir>       # Remove empty directory
-rm -rf <dir>      # Remove directory and its contents
+ls           # List files and directories
+
+ls -la       # List all files with details
+
+cd <dir>     # Change directory
+
+pwd          # Print working directory
+
+mkdir <dir>  # Create new directory
+
+rmdir <dir>  # Remove empty directory
+
+rm -rf <dir> # Remove directory and its contents
 \`\`\`
 
 ## - Variables
@@ -84,10 +93,15 @@ fi
 
 \`\`\`bash
 -eq           # Equal to
+
 -ne           # Not equal to
+
 -gt           # Greater than
+
 -lt           # Less than
+
 -ge           # Greater or equal
+
 -le           # Less or equal
 \`\`\`
 
@@ -95,12 +109,12 @@ fi
 ## - File Operations
 
 \`\`\`bash
-cp file1 file2          # Copy file
-mv file1 file2          # Move or rename file
-cat file.txt            # Display file content
-touch file.txt          # Create empty file
-head file.txt           # Show first 10 lines
-tail file.txt           # Show last 10 lines
+cp file1 file2        # Copy file
+mv file1 file2        # Move or rename file
+cat file.txt          # Display file content
+touch file.txt        # Create empty file
+head file.txt         # Show first 10 lines
+tail file.txt         # Show last 10 lines
 \`\`\`
 
 

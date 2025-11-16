@@ -23,7 +23,8 @@ const gitMarkdown = `
 
 \`\`\`bash
 git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+
+git config --global user.email "Email"
 \`\`\`
 
 ## - Download Repository 
@@ -36,21 +37,29 @@ git clone <URL>  # URL of Repository
 ## - Repository Setup
 
 \`\`\`bash
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin <URL> 
-git push -u origin main
+git init               # Initialize repo
+
+git add .              # Stage all files
+
+git commit -m "first commit" # First commit
+
+git branch -M main     # Rename to main
+
+git remote add origin <URL> # Add remote origin
+
+git push -u origin main  # Push to main branch
 \`\`\`
 
 
 ## - Staging & Committing
 
 \`\`\`bash
-git status              # Check file status
-git add <file>          # Add file to staging area
-git add .               # Add all files
+git status           # Check file status
+
+git add <file>       # Add file to staging area
+
+git add .            # Add all files
+
 git commit -m "Message" # Commit with message
 \`\`\`
 
@@ -59,8 +68,11 @@ git commit -m "Message" # Commit with message
 
 \`\`\`bash
 git branch              # List branches
+
 git branch <name>       # Create a branch
+
 git checkout <name>     # Switch to branch
+
 git merge <name>        # Merge branch
 \`\`\`
 
@@ -69,31 +81,32 @@ git merge <name>        # Merge branch
 
 \`\`\`bash
 git remote add origin <url>  # Add remote repository
-git push -u origin main      # Push changes
-git pull origin main         # Pull updates
+
+git push -u origin main   # Push changes
+
+git pull origin main      # Pull updates
 \`\`\`
 
 
 ## - History
 
 \`\`\`bash
-git log                # Show commit history
-git diff               # Show changes
-git show <commit>      # Show specific commit
+git log             # Show commit history
+
+git diff            # Show changes
+
+git show <commit>   # Show specific commit
 \`\`\`
 
 
 ## - Undo & Reset
 
 \`\`\`bash
-git restore <file>         # Discard changes
-git reset --hard HEAD~1    # Undo last commit
+git restore <file>      # Discard changes
+
+git reset --hard HEAD~1 # Undo last commit
 \`\`\`
 
----
-
-**Tip:**  
-Use \`git status\` often to keep track of what’s happening!
 `;
 
 export default function Git() {
