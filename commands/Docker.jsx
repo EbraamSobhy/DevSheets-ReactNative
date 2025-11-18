@@ -18,7 +18,9 @@ Works natively on Linux and via Docker Desktop or WSL2 on macOS and Windows.
 
 \`\`\`bash
 docker version      # Show Docker version
+
 docker info         # System Docker info
+
 docker help         # Docker commands
 \`\`\`
 
@@ -28,10 +30,15 @@ docker help         # Docker commands
 
 \`\`\`bash
 cp file1 file2      # Copy file
+
 mv file1 file2      # Move or rename file
+
 cat file.txt        # Display file content
+
 touch file.txt      # Create empty file
+
 head file.txt       # Show first 10 lines
+
 tail file.txt       # Show last 10 lines
 \`\`\`
 
@@ -41,13 +48,21 @@ tail file.txt       # Show last 10 lines
 
 \`\`\`bash
 docker ps       # List running containers
+
 docker ps -a    # List all containers
+
 docker run <image>     # Run container
+
 docker run -it <image> # Interactive mode
+
 docker run -d <image>  # Detached mode
+
 docker run --name <name><image> # Run name
+
 docker start <container> # Start container
+
 docker stop <container>   # Stop container
+
 docker rm <container> # Remove container
 
 docker restart <container> # Restart container
@@ -61,10 +76,15 @@ docker restart <container> # Restart container
 docker exec -it <container> # Access container shell
 
 docker logs <container>     # View logs
+
 docker inspect <container>  # Detailed info
+
 docker rename <old_name> <new_name>  # Rename container
+
 docker pause <container>    # Pause container
+
 docker unpause <container>  # Unpause container
+
 docker cp <container>:<path> <destination>  # Copy files
 \`\`\`
 
@@ -73,10 +93,13 @@ docker cp <container>:<path> <destination>  # Copy files
 ## - Volumes (Data Persistence)
 
 \`\`\`bash
-ping google.com        # Test connection
-ifconfig               # Show network interfaces
-curl <url>             # Fetch data from a URL
-wget <url>             # Download file from a URL
+ping google.com    # Test connection
+
+ifconfig        # Show network interfaces
+
+curl <url>         # Fetch data from a URL
+
+wget <url>         # Download file URL
 \`\`\`
 
 ---
@@ -84,11 +107,16 @@ wget <url>             # Download file from a URL
 ## - Networks
 
 \`\`\`bash
-docker network ls              # List networks
-docker network create <name>   # Create a network
+docker network ls          # List networks
+
+docker network create <name> # Create network
+
 docker network inspect <name>  # Inspect a network
+
 docker network rm <name>       # Remove a network
+
 docker network connect <network> <container>     # Connect container to network
+
 docker network disconnect <network> <container>  # Disconnect container from network
 \`\`\`
 
@@ -97,8 +125,10 @@ docker network disconnect <network> <container>  # Disconnect container from net
 ## - Building & Managing Images
 
 \`\`\`bash
-docker build -t <name> .          # Build an image from Dockerfile
-docker history <image>            # Show image history
+docker build -t <name> .  # Build an image from Dockerfile
+
+docker history <image>    # Show image history
+
 docker commit <container> <new_image>  # Create new image from container
 \`\`\`
 
@@ -107,11 +137,15 @@ docker commit <container> <new_image>  # Create new image from container
 ## - System Cleanup & Maintenance
 
 \`\`\`bash
-docker system prune        # Remove unused containers, networks, images
-docker container prune     # Remove all stopped containers
-docker image prune         # Remove unused images
-docker volume prune        # Remove unused volumes
-docker network prune       # Remove unused networks
+docker system prune    # Remove unused containers, networks, images
+
+docker container prune # Remove all stopped containers
+
+docker image prune     # Remove unused images
+
+docker volume prune    # Remove unused volumes
+
+docker network prune   # Remove unused networks
 \`\`\`
 
 ---
@@ -135,8 +169,10 @@ docker run -d -p 3000:3000 my-express-app
 ## - Docker Hub
 
 \`\`\`bash
-docker login                    # Login to Docker Hub
+docker login         # Login to Docker Hub
+
 docker tag <image> <username>/<image>  # Tag image for Docker Hub
+
 docker push <username>/<image>  # Push image to Docker Hub
 \`\`\`
 

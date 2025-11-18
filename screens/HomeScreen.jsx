@@ -89,18 +89,18 @@ export default function HomeScreen({ navigation }) {
       {/* Daily Tip Section */}
       <View
         style={{
-          backgroundColor: "#111",
+          backgroundColor: "#26a269",
           borderRadius: 12,
           padding: 20,
-          borderColor: "#26a269",
-          borderWidth: 1,
+          borderColor: "#FFFFFF",
+          borderWidth: 3,
           width: "100%",
           marginBottom: 30,
         }}
       >
         <Text
           style={{
-            color: "#26a269",
+            color: "#000000",
             fontSize: 20,
             fontWeight: "bold",
             marginBottom: 10,
@@ -113,6 +113,7 @@ export default function HomeScreen({ navigation }) {
             color: "#fff",
             fontSize: 16,
             lineHeight: 22,
+            fontWeight: "bold"
           }}
         >
           {tip}

@@ -137,7 +137,7 @@ export default function CheatSheet({ navigation }) {
            {/* Tmux */}
         <View>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Gemini")}
+          onPress={() => navigation.navigate("Tmux")}
           activeOpacity={0.8}
         >
         <View

@@ -4,176 +4,138 @@ import * as Clipboard from "expo-clipboard";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const bashMarkdown = `
-**Bash (Bourne Again SHell)** is a command-line interpreter that allows users to interact with the operating system using text commands.  
+**Tmux (Terminal Multiplexer)** is a command-line tool that allows users to manage multiple terminal sessions within a single window.
+
 It’s widely used on Linux, macOS, and even on Windows (via WSL).
 
 ---
 
-## - Printing
+## - Sessions
 
 \`\`\`bash
-echo "Hello"
+tmux
 
-echo 'Hello'
+tmux new
 
-echo -e 'some \text'
+tmux new-session
 
-# Run script:
-./myscript.sh
+tmux new-session -A -s mysession  # Start to session 'mysession'
+
+tmux new -s mysession   # Start session 'mysession'
+
+tmux kill-session  # Kill current session
+
+tmux kill-session -t mysession      # Kill session 'mysession'
+
+tmux kill-session -a  # Kill all sessions except current
+
+tmux kill-session -a -t mysession   # Kill all sessions except 'mysession'
+
+tmux ls                   # List sessions
+
+tmux list-sessions        # List sessions
+
+tmux attach               # Attach to last session
+
+tmux attach-session       # Attach to last session
+
+tmux attach -t mysession             # Attach to session 'mysession'
+
+tmux attach-session -t mysession     # Attach to session 'mysession'
 \`\`\`
 
-## - Create Script
+## - Session Shortcuts
 
 \`\`\`bash
-nano myscript.sh
-
-chmod +x myscript.sh
-
-# this is a comment
-\`\`\`
-
-
-## - File & Directory Commands
-
-\`\`\`bash
-ls           # List files and directories
-
-ls -la       # List all files with details
-
-cd <dir>     # Change directory
-
-pwd          # Print working directory
-
-mkdir <dir>  # Create new directory
-
-rmdir <dir>  # Remove empty directory
-
-rm -rf <dir> # Remove directory and its contents
-\`\`\`
-
-## - Variables
-
-\`\`\`bash
-STRING="Linux"
-echo $STRING
-
-name=Mark
-echo "The name is $name"
-
-val=10
-echo "value $val"
-
-_val=10
-echo "value $_val"
+Ctrl + b $   # Rename session
+Ctrl + b d   # Detach from session
+Ctrl + b s   # Show all sessions
+Ctrl + b (   # Previous session
+Ctrl + b )   # Next session
+Ctrl + b w   # Session and Window preview
 \`\`\`
 
 
-## - Conditional Statements
+## - Windows
 
 \`\`\`bash
-count=1
-if [ $count -eq 10 ]
-then
-  echo "True"
-else
-  echo "False"
-fi
-
-num=1
-if [ $num -gt 10 ]; then
-  echo "True"
-elif [ $num -gt 0 ]; then
-  echo "Positive number"
-else
-  echo "False"
-fi
-\`\`\`
-
-## - Numeric Operators
-
-\`\`\`bash
--eq           # Equal to
-
--ne           # Not equal to
-
--gt           # Greater than
-
--lt           # Less than
-
--ge           # Greater or equal
-
--le           # Less or equal
+tmux new -s mysession -n mywindow   # New session 'mysession' with window 'mywindow'
+Ctrl + b c   # Create window
+Ctrl + b ,   # Rename current window
+Ctrl + b &   # Close current window
+Ctrl + b w   # List windows
+Ctrl + b p   # Previous window
+Ctrl + b n   # Next window
+Ctrl + b 0..9 # Switch to window by number
+Ctrl + b l   # Toggle last active window
+: swap-window -s 2 -t 1  # Swap windows 2 and 1
+: swap-window -t -1       # Move window left by one
+: move-window -s src_ses:win -t target_ses:win  # Move window to another session
+: move-window -r          # Renumber windows to remove gaps
 \`\`\`
 
 
-## - File Operations
+## - Panes
 
 \`\`\`bash
-cp file1 file2    # Copy file
-
-mv file1 file2    # Move or rename file
-
-cat file.txt      # Display file content
-
-touch file.txt    # Create empty file
-
-head file.txt     # Show first 10 lines
-
-tail file.txt     # Show last 10 lines
+Ctrl + b ;   # Toggle last active pane
+Ctrl + b %   # Split pane vertically
+Ctrl + b "   # Split pane horizontally
+: join-pane -s 2 -t 1      # Merge window 2 into window 1 as pane
+Ctrl + b {   # Move current pane left
+Ctrl + b }   # Move current pane right
+Ctrl + b o   # Switch to next pane
+Ctrl + b q   # Show pane numbers
+Ctrl + b q 0..9  # Switch to pane by number
+Ctrl + b z   # Toggle pane zoom
+Ctrl + b !   # Convert pane into window
+Ctrl + b x   # Close current pane
 \`\`\`
 
 
-## - Permissions
+## - Copy Mode
 
 \`\`\`bash
-chmod +x script.sh   # Make script executable
-
-chown user file.txt  # Change file owner
-
-sudo <command>  # Run command as superuser
+: setw -g mode-keys vi   # Use vi keys in copy mode
+Ctrl + b [               # Enter copy mode
+Ctrl + b PgUp            # Enter copy mode and scroll up
+q                        # Quit copy mode
+g                        # Go to top
+G                        # Go to bottom
+h,j,k,l                  # Move cursor left, down, up, right
+w,b                      # Move forward/back by word
+/,?                      # Search forward/backward
+n,N                      # Next/previous search match
+Spacebar                 # Start selection
+Esc                      # Clear selection
+Enter                    # Copy selection
+Ctrl + b ]               # Paste buffer
+: show-buffer            # Display buffer
+: capture-pane           # Copy entire pane to buffer
+: list-buffers           # Show all buffers
+: choose-buffer          # Choose buffer to paste
+: save-buffer buf.txt    # Save buffer to file
+: delete-buffer -b 1     # Delete buffer 1
 \`\`\`
 
 
-## - Process Management
+## - Misc Commands
 
 \`\`\`bash
-ps           # Show running processes
-
-top          # Show system processes
-
-kill <pid>   # Kill a process by ID
-
-htop         # Interactive process viewer
+Ctrl + b :       # Enter command mode
+: set -g OPTION  # Set global option
+: setw -g OPTION # Set window option
+: set mouse on   # Enable mouse mode
 \`\`\`
 
 
-## - Networking
+## - Help
 
 \`\`\`bash
-ping google.com # Test connection
-
-ifconfig        # Show network interfaces
-
-curl <url>      # Fetch data from a URL
-
-wget <url>      # Download file from a URL
+tmux list-keys    # List all key bindings
+Ctrl + b ?        # Show shortcuts
+tmux info         # Show session, window, pane info
 \`\`\`
-
-
-## - Useful Shortcuts
-
-\`\`\`bash
-Ctrl + C    # Stop running command
-
-Ctrl + L    # Clear terminal
-
-Ctrl + R    # Search command history
-
-!!          # Repeat last command
-
-!<number>   # Run command from history
-\`\`\`
-
 `;
 
 export default function Bash() {
@@ -200,13 +162,12 @@ export default function Bash() {
         }}
       >
         <Image
-          source={require("../assets/Bash.png")}
+          source={require("../assets/Tmux.png")}
           style={{
             width: 40,
             height: 40,
             marginRight: 10,
             resizeMode: "contain",
-            tintColor: "white",
           }}
         />
         <Text
@@ -217,7 +178,7 @@ export default function Bash() {
             fontFamily: "monospace",
           }}
         >
-          Bash Commands
+            Tmux Commands
         </Text>
       </View>
 
