@@ -4,16 +4,16 @@ import * as Clipboard from "expo-clipboard";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const bashMarkdown = `
-**Tmux (Terminal Multiplexer)** is a command-line tool that allows users to manage multiple terminal sessions within a single window.
+**Linux** is an open-source operating system that powers everything from personal computers and servers to smartphones, cloud systems, and embedded devices.
 
-It’s widely used on Linux, macOS, and even on Windows (via WSL).
+It’s widely used by developers, system administrators, cybersecurity professionals, and even everyday users who want a fast, secure, and customizable system.
 
 ---
 
-## - Sessions
+## - Navigation & Directories
 
 \`\`\`bash
-tmux
+cd
 
 tmux new
 
@@ -214,7 +214,7 @@ export default function Bash() {
         }}
       >
         <Image
-          source={require("../assets/Tmux.png")}
+          source={require("../assets/Linux.png")}
           style={{
             width: 40,
             height: 40,
@@ -230,7 +230,7 @@ export default function Bash() {
             fontFamily: "monospace",
           }}
         >
-            Tmux Commands
+            Linux Commands
         </Text>
       </View>
 

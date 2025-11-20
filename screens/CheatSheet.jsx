@@ -48,6 +48,10 @@ export default function CheatSheet({ navigation }) {
         </TouchableOpacity>
 
       {/* Linux */}
+        <TouchableOpacity
+        onPress={() => navigation.navigate("Linux")}
+        activeOpacity={0.8}
+      >
         <View
           style={{
             flexDirection: "row",
@@ -65,6 +69,7 @@ export default function CheatSheet({ navigation }) {
             Linux
           </Text>
         </View>
+        </TouchableOpacity>
 
         {/* Bash */}
         <View>

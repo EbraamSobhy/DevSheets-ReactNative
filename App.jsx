@@ -13,6 +13,7 @@ import Gemini from './commands/Gemini';
 import GitHub from './commands/GitHub';
 import Docker from './commands/Docker';
 import Tmux from './commands/Tmux';
+import Linux from './commands/Linux';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -126,7 +127,15 @@ export default function App() {
             headerTintColor: '#26a269',
           }}
         />
- 
+         <Stack.Screen
+          name="Linux"
+          component={Linux}
+          options={{
+            title: "Linux",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
