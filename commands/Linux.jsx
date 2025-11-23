@@ -13,181 +13,196 @@ It’s widely used by developers, system administrators, cybersecurity professio
 ## - Navigation & Directories
 
 \`\`\`bash
-cd
+cd       # Navigate through files and dir
 
-tmux new
+cd -     # Move to your previous directory
 
-tmux new-session
+cd ..    # Move one directory up
 
-tmux new-session -A -s mysession  # Start to session 'mysession'
-
-tmux new -s mysession   # Start session 'mysession'
-
-tmux kill-session  # Kill current session
-
-tmux kill-session -t mysession      # Kill session 'mysession'
-
-tmux kill-session -a  # Kill all sessions except current
-
-tmux kill-session -a -t mysession   # Kill all sessions except 'mysession'
-
-tmux ls                   # List sessions
-
-tmux list-sessions        # List sessions
-
-tmux attach               # Attach to last session
-
-tmux attach-session       # Attach to last session
-
-tmux attach -t mysession             # Attach to session 'mysession'
-
-tmux attach-session -t mysession     # Attach to session 'mysession'
+pwd      # Show your current directory
 \`\`\`
 
-## - Session Shortcuts
+## - Directory Management
 
 \`\`\`bash
-Ctrl + b $   # Rename session
+mkdir [name]  # Create a new directory
 
-Ctrl + b d   # Detach from session
-
-Ctrl + b s   # Show all sessions
-
-Ctrl + b (   # Previous session
-
-Ctrl + b )   # Next session
-
-Ctrl + b w   # Session and Window preview
+rmdir         # Delete a directory
 \`\`\`
 
 
-## - Windows
+## - Disk & Storage Usage
 
 \`\`\`bash
-tmux new -s mysession -n mywindow   # New session 'mysession' with window 'mywindow'
+df             # Report disk space usage
 
-Ctrl + b c   # Create window
+fdisk -l       # Show disk partitions
 
-Ctrl + b ,   # Rename current window
+du             # Check disk space usage 
 
-Ctrl + b &   # Close current window
+du -ah         # Show disk usage files and directory
 
-Ctrl + b w   # List windows
+du -sh         # Show disk usage of the current directory
 
-Ctrl + b p   # Previous window
-
-Ctrl + b n   # Next window
-
-Ctrl + b 0..9 # Switch to window by number
-
-Ctrl + b l   # Toggle last active window
-
-: swap-window -s 2 -t 1  # Swap windows 2 and 1
-
-: swap-window -t -1       # Move window left by one
-
-: move-window -s src_ses:win -t target_ses:win  # Move window to another session
-
-: move-window -r          # Renumber windows to remove gaps
+findmnt        # Show target mount points for all filesystems
 \`\`\`
 
 
-## - Panes
+## - Listing & File Viewing
 
 \`\`\`bash
-Ctrl + b ;   # Toggle last active pane
+ls             # List files in a director
 
-Ctrl + b %   # Split pane vertically
+ls -a          # List hidden files
 
-Ctrl + b "   # Split pane horizontally
+ls -R          # List files in subdir
 
-: join-pane -s 2 -t 1      # Merge window 2 into window 1 as pane
+ls -al         # Detailed file list
 
-Ctrl + b {   # Move current pane left
+cat file1 file2 > file3  # Merge files
 
-Ctrl + b }   # Move current pane right
+cat filename          # Show file content
 
-Ctrl + b o   # Switch to next pane
+touch filename        # Create file
 
-Ctrl + b q   # Show pane numbers
+cat filename | tr a-z A-Z > output.txt  # Convert case
 
-Ctrl + b q 0..9  # Switch to pane by number
+diff                  # Compare two files
 
-Ctrl + b z   # Toggle pane zoom
+tar                   # Archive files
 
-Ctrl + b !   # Convert pane into window
+tar xf file.tar       # Extract archive
 
-Ctrl + b x   # Close current pane
+tar cf file.tar file  # Create tar archive
+
+tar czf file.tar.gz   # Create gzip archive
+
+chmod        # Change file permissions
+
+chown        # Change file ownership
 \`\`\`
 
 
-## - Copy Mode
+## - File Operations
 
 \`\`\`bash
-: setw -g mode-keys vi   # Use vi keys in copy mode
+rm file      # Remove file
 
-Ctrl + b [               # Enter copy mode
+rm -r dir   # Remove directory recursively
 
-Ctrl + b PgUp     # Enter copy mode and scroll up
+rm -rf dir       # Force-delete directory
 
-q                        # Quit copy mode
+cp file1 file2        # Copy file
 
-g                        # Go to top
+cp -r dir1 dir2       # Copy directory
 
-G                        # Go to bottom
+mv file1 file2        # Rename file
 
-h,j,k,l        # Move cursor
+mv                  # Move or rename files
 
-w,b            # Move forward/back by word
+touch file            # Create new file
 
-/,?              # Search forward/backward
+wc                  # Word/line/byte count
 
-n,N          # Next/previous search match
+tail file             # Show last 10 lines
 
-Spacebar                 # Start selection
+head file             # First 10 lines
 
-Esc                      # Clear selection
+more file             # View file
 
-Enter                    # Copy selection
+gzip file             # Compress file
 
-Ctrl + b ]               # Paste buffer
+gpg -c file           # Encrypt file
 
-: show-buffer            # Display buffer
+gpg file.gpg          # Decrypt file
 
-: capture-pane     # Copy entire pane to buffer
+wget             # Download from internet
 
-: list-buffers        # Show all buffers
+locate                # Search files
 
-: choose-buffer   # Choose buffer to paste
+find            # Locate files recursively
 
-: save-buffer buf.txt    # Save buffer to file
-
-: delete-buffer -b 1     # Delete buffer 1
+ln -s /path/to/file link    # Create symbolic link
 \`\`\`
 
 
-## - Misc Commands
+## - System Management
+ 
+\`\`\`bash
+sudo                  # Run as superuser
+
+jobs                  # List jobs
+
+kill                  # Terminate program
+
+ps                # Show active processes
+
+top            # Monitor system resources
+
+history        # Show command history
+
+man                 # Open command manual
+
+echo                  # Output text
+
+zip                   # Create zip archive
+
+unzip               # Extract zip archive
+\`\`\`
+
+
+## - Networking & System Info
 
 \`\`\`bash
-Ctrl + b :       # Enter command mode
+ping                  # Test connectivity
 
-: set -g OPTION  # Set global option
+uname                 # Show system info
 
-: setw -g OPTION # Set window option
+uname -r              # Kernel info
 
-: set mouse on   # Enable mouse mode
+hostname              # Show host name
+
+hostname -i           # Show system IP
+
+ip addr show          # Show IP addresses
+
+ifconfig         # Show network interfaces
+
+
+netstat -pnltu        # Show active ports
+
+netstat -nutlp     # Detailed network info
+
+whois domain          # Domain info
+
+dig domain            # DNS lookup
+
+host domain           # IP lookup
 \`\`\`
 
 
-## - Help
+## - System & User Management
 
 \`\`\`bash
-tmux list-keys    # List all key bindings
+last reboot           # Reboot history
 
-Ctrl + b ?        # Show shortcuts
+uptime                # System uptime
 
-tmux info   # Show session, window, pane info
+date                  # Current time/date
+
+timedatectl        # Manage system clock
+
+id                    # User info
+
+passwd              # Change user password
+
+useradd               # Add user
+
+userdel username      # Delete user
+
+last                  # Login history
 \`\`\`
+
 `;
 
 export default function Bash() {

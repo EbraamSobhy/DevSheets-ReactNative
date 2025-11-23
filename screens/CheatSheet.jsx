@@ -173,40 +173,6 @@ export default function CheatSheet({ navigation }) {
         </TouchableOpacity>
       </View>
 
-            {/* FZF */}
-        <View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Gemini")}
-          activeOpacity={0.8}
-        >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "black",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
-          }}
-        >
-        <Image
-            source={require("../assets/fzf.png")}
-            style={{
-            width: 35,
-            height: 25,
-            resizeMode: "contain",
-            tintColor: "#26a269"
-          }}
-        />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
-            Fuzzy Finder
-          </Text>
-        </View>
-        </TouchableOpacity>
-      </View>
-
             {/* oh my zsh */}
         <View>
         <TouchableOpacity
