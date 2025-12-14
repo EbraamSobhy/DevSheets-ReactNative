@@ -14,6 +14,7 @@ import GitHub from './commands/GitHub';
 import Docker from './commands/Docker';
 import Tmux from './commands/Tmux';
 import Linux from './commands/Linux';
+import AWS from './commands/AWS';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -132,6 +133,15 @@ export default function App() {
           component={Linux}
           options={{
             title: "Linux",
+            headerStyle: { backgroundColor: '#000' },
+            headerTintColor: '#26a269',
+          }}
+        />
+        <Stack.Screen
+          name="AWS"
+          component={AWS}
+          options={{
+            title: "AWS CLI",
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#26a269',
           }}

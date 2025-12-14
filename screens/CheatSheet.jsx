@@ -92,13 +92,13 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/Bash.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "contain",
             tintColor: "#26a269"
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Bash
           </Text>
         </View>
@@ -126,14 +126,48 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/Docker.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "contain",
             tintColor: "#26a269"
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Docker
+          </Text>
+        </View>
+        </TouchableOpacity>
+      </View>
+
+        {/* AWS */}
+        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("AWS")}
+          activeOpacity={0.8}
+        >
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "black",
+            padding: 16,
+            borderRadius: 12,
+            marginBottom: 12,
+            borderColor: "#26a269",
+            borderWidth: 1,
+          }}
+        >
+        <Image
+            source={require("../assets/aws.png")}
+            style={{
+            width: 35,
+            height: 25,
+            resizeMode: "cover",
+            tintColor: "#26a269"
+          }}
+        />
+          <Text style={{ color: "#fff", marginLeft: 5, fontSize: 16 }}>
+            AWS CLI
           </Text>
         </View>
         </TouchableOpacity>
@@ -172,43 +206,7 @@ export default function CheatSheet({ navigation }) {
         </View>
         </TouchableOpacity>
       </View>
-
-            {/* oh my zsh */}
-        <View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Gemini")}
-          activeOpacity={0.8}
-        >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "black",
-            padding: 16,
-            borderRadius: 12,
-            marginBottom: 12,
-            borderColor: "#26a269",
-            borderWidth: 1,
-          }}
-        >
-        <Image
-            source={require("../assets/zsh.png")}
-            style={{
-            width: 35,
-            height: 25,
-            size: 30,
-            resizeMode: "contain",
-            tintColor: "#26a269"
-          }}
-        />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
-            oh my zsh
-          </Text>
-        </View>
-        </TouchableOpacity>
-      </View>
-
-
+            
       {/* Gemini */}
         <View>
         <TouchableOpacity
