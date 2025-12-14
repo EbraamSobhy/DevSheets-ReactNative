@@ -160,13 +160,13 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/aws.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "cover",
-            tintColor: "#26a269"
+            tintColor: "#26a269",
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 5, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             AWS CLI
           </Text>
         </View>
@@ -194,13 +194,13 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/Tmux.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "contain",
             tintColor: "#26a269"
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Tmux
           </Text>
         </View>
@@ -228,13 +228,13 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/Gemini.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "contain",
             tintColor: "#26a269"
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 8, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Gemini CLI
           </Text>
         </View>
@@ -263,10 +263,9 @@ export default function CheatSheet({ navigation }) {
               name="github" 
               size={24} 
               color="#26a269"
-              style={{ marginLeft: 5 }}
               />
 
-          <Text style={{ color: "#fff", marginLeft: 15, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             GitHub CLI
           </Text>
         </View>
@@ -294,13 +293,13 @@ export default function CheatSheet({ navigation }) {
         <Image
             source={require("../assets/VSCode.png")}
             style={{
-            width: 35,
+            width: 25,
             height: 25,
             resizeMode: "contain",
             tintColor: "#26a269"
           }}
         />
-          <Text style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Integrated Development Environments
           </Text>
         </View>
@@ -325,8 +324,8 @@ export default function CheatSheet({ navigation }) {
             borderWidth: 1,
           }}
         >
-          <FontAwesome name="windows" size={24} color="#26a269" />
-          <Text style={{ color: "#fff", marginLeft: 20, fontSize: 16 }}>
+          <FontAwesome name="windows" size={24} color="#26a269"  />
+          <Text style={{ color: "#fff", marginLeft: 10, fontSize: 16 }}>
             Operating systems (OS)
           </Text>
         </View>
